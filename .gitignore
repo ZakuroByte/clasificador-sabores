@@ -11,3 +11,5 @@ wheels/
 __pycache__
 food-101
 features.npy
+features_300.npy
+embeddings_resnet50.npy

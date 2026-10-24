@@ -2,7 +2,7 @@ import os, random
 import pandas as pd
 
 RUTA = "food-101"          # carpeta descomprimida
-POR_CLASE = 100            # fotos por categoría
+POR_CLASE = 300           # fotos por categoría
 SABORES = {"A": "acido", "M": "amargo", "D": "dulce", "P": "picante", "S": "salado"}
 
 MAPA = {
@@ -33,7 +33,7 @@ filas = []
 for clase, letras in MAPA.items():
     archivos = os.listdir(f"{RUTA}/images/{clase}")
     for f in random.sample(archivos, POR_CLASE):
-        fila = {"imagen": f"{clase}/{f}"}
+        fila = {"imagen": f"{clase}/{f}","plato":clase}
         for letra, nombre in SABORES.items():
             fila[nombre] = int(letra in letras)
         filas.append(fila)
